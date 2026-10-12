@@ -26,3 +26,12 @@ patches:
       - op: replace
         path: /spec/maxReplicas
         value: 2
+  - target:
+      group: policy
+      version: v1
+      kind: PodDisruptionBudget
+      name: payment-api
+    patch: |-
+      - op: replace
+        path: /spec/minAvailable
+        value: 0
