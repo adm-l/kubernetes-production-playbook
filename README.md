@@ -8,12 +8,13 @@ A practical reference for deploying, scaling, securing, observing, and troublesh
 3. Explore the [reference architecture](docs/architecture.md).
 4. Inspect the [sample Go API manifests](examples/go-api/base/).
 5. Use the [kubectl quick reference](docs/kubectl-cheatsheet.md) and [troubleshooting runbooks](runbooks/).
+6. For networking incidents, follow the [Kubernetes network troubleshooting runbook](runbooks/network-troubleshooting.md).
 
 ## Repository map
 - `examples/go-api/base/`: Deployment, ServiceAccount, Service, HPA, PDB and NetworkPolicy.
 - `examples/go-api/overlays/`: Kustomize development and production examples.
 - `docs/`: Architecture, rollout strategy, security, resources/scaling, Kustomize and operations.
-- `runbooks/`: CrashLoopBackOff, Pending Pods and latency spikes.
+- `runbooks/`: CrashLoopBackOff, Pending Pods, latency spikes, and detailed network troubleshooting.
 
 ## Validate locally
 Prerequisites: kubectl with Kustomize support; optionally use kind/minikube and a schema validator such as kubeconform.
