@@ -1,0 +1,22 @@
+# Requires a CNI that enforces Kubernetes NetworkPolicy.
+# This permits ingress from same-namespace Pods with the platform label.
+# Add and test explicit egress for DNS, telemetry and application dependencies
+# before enabling default-deny egress policies.
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: payment-api-ingress
+spec:
+  podSelector:
+    matchLabels:
+      app.kubernetes.io/name: payment-api
+  policyTypes:
+    - Ingress
+  ingress:
+    - from:
+        - podSelector:
+            matchLabels:
+              app.kubernetes.io/part-of: sample-platform
+      ports:
+        - protocol: TCP
+          port: 8080
