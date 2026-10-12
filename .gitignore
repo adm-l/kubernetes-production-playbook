@@ -1,0 +1,14 @@
+# Local overrides and generated output
+*.local.yaml
+*.secret.yaml
+.env
+.env.*
+!.env.example
+kubeconfig
+kubeconfig.*
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+.DS_Store
